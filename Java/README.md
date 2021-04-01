@@ -53,13 +53,41 @@ Forecasted items quality will be output in the console day by day
 
 ## Run tests
 
-So far the only test is skipped however testing strategy is going to be consolidated in upcoming iterations
+#### Run integration tests
+
+Test folders are segregated, integration test classes can be found in src/integration-test
+
+Integration tests are comparing actual application console output with expected output saved in resources folder
+Comparison is done line by line to ease debugging
+
+**integration** maven profile must be used in order to access segregated folder classes and resources
+
+for now 2 tests are written
+
+- test application behavior with no arguments
+- test application behavior with a argument number that exceeds all items sellIn value -> 20
+
+Run command:
+
+```
+mvn verify -Pintegration
+```
+
+notes:
+
+- integration test classes must be suffixed by "IT" in order to be included by failsafe maven plugin
+- unit tests are not triggered while using integration profile
+
+#### Run unit tests
 
 execute command:
 
 ```
 mvn test
 ```
+
+Notes: so far the only unit test is skipped however unit testing strategy is going to be consolidated in upcoming
+iterations
 
 ### Biggest consumers and sponsors
 
