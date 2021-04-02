@@ -89,6 +89,21 @@ mvn test
 Notes: so far the only unit test is skipped however unit testing strategy is going to be consolidated in upcoming
 iterations
 
-### Biggest consumers and sponsors
+## IDE configuration
+
+### Intellij IDEA
+
+**Remove star import :**
+Settings(Preferences for MAC) -> editor -> Code Style -> Java -> Imports -> General -> Class count to use import
+with '*' -> set value to 99
+
+**Simple lambdas in one line**
+Settings(Preferences for MAC) -> editor -> Code Style -> Java -> Wrapping and Braces
+
+- Check ***Simple lambdas in one line***
+- Check ***Simple blocks in one line***
+- Check ***Simple methods in one line***
+
+## Biggest consumers and sponsors
 
 - Allison

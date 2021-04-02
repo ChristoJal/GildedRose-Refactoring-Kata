@@ -1,20 +1,34 @@
 package com.gildedrose;
 
+import com.gildedrose.dto.Item;
+
+import static com.gildedrose.GlidedRoseConstants.ItemNames.AGED_BRIE;
+import static com.gildedrose.GlidedRoseConstants.ItemNames.BACKSTAGE_PASSES_TAFKAL80ETC;
+import static com.gildedrose.GlidedRoseConstants.ItemNames.CONJURED_MANA_CAKES;
+import static com.gildedrose.GlidedRoseConstants.ItemNames.DEXTERITY_5_VEST;
+import static com.gildedrose.GlidedRoseConstants.ItemNames.MONGOOSE_ELIXIR;
+import static com.gildedrose.GlidedRoseConstants.ItemNames.SULFURAS;
+
 public class TexttestFixture {
     public static void main(String[] args) {
+        // TODO log an useful statement, eg "application started with arguments ..."
         System.out.println("OMGHAI!");
 
-        Item[] items = new Item[] {
-                new Item("+5 Dexterity Vest", 10, 20), //
-                new Item("Aged Brie", 2, 0), //
-                new Item("Elixir of the Mongoose", 5, 7), //
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
-                new Item("Sulfuras, Hand of Ragnaros", -1, 80),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+        // TODO check that argument[0], if provided, is castable to an integer
+
+        // TODO move item creation to a ItemRepository.class and a findAll() method or load from a resource file
+        Item[] items = new Item[]{
+                new Item(DEXTERITY_5_VEST, 10, 20), //
+                new Item(AGED_BRIE, 2, 0), //
+                new Item(MONGOOSE_ELIXIR, 5, 7), //
+                new Item(SULFURAS, 0, 80), //
+                new Item(SULFURAS, -1, 80),
+                new Item(BACKSTAGE_PASSES_TAFKAL80ETC, 15, 20),
+                new Item(BACKSTAGE_PASSES_TAFKAL80ETC, 10, 49),
+                new Item(BACKSTAGE_PASSES_TAFKAL80ETC, 5, 49),
+                // TODO remove if not working
                 // this conjured item does not work properly yet
-                new Item("Conjured Mana Cake", 3, 6) };
+                new Item(CONJURED_MANA_CAKES, 3, 6)};
 
         GildedRose app = new GildedRose(items);
 
