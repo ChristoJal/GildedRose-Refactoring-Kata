@@ -26,9 +26,9 @@ public class TexttestFixture {
                 new Item(BACKSTAGE_PASSES_TAFKAL80ETC, 15, 20),
                 new Item(BACKSTAGE_PASSES_TAFKAL80ETC, 10, 49),
                 new Item(BACKSTAGE_PASSES_TAFKAL80ETC, 5, 49),
-                // TODO remove if not working
-                // this conjured item does not work properly yet
-                new Item(CONJURED_MANA_CAKES, 3, 6)};
+                new Item(CONJURED_MANA_CAKES, 3, 6),
+                new Item(CONJURED_MANA_CAKES, 3, 60)};
+
 
         GildedRose app = new GildedRose(items);
 

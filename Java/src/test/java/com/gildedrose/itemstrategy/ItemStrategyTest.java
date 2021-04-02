@@ -1,6 +1,7 @@
 package com.gildedrose.itemstrategy;
 
 import com.gildedrose.dto.Item;
+import com.gildedrose.itemstrategy.ItemStrategy;
 import org.junit.jupiter.api.Test;
 
 import static com.gildedrose.GlidedRoseConstants.ItemDetails.BACKSTAGE_PASSES_10DAYS_INCREASE_AMOUNT;
@@ -124,6 +125,23 @@ public class ItemStrategyTest {
         Item expectedItem = new Item(null, sellIn, quality);
         decrementSellIn(expectedItem);
         increaseQuality(expectedItem, BACKSTAGE_PASSES_10DAYS_INCREASE_AMOUNT);
+        assertEquals(expectedItem.quality, sourceItem.quality);
+        assertEquals(expectedItem.sellIn, sourceItem.sellIn);
+    }
+
+    @Test
+    void testConjuredStrategy() {
+        // given
+        int quality = 1;
+        int sellIn = 11;
+        ItemStrategy conjuredStrategy = ItemStrategy.ConjuredStrategy();
+        Item sourceItem = new Item(null, sellIn, quality);
+        // when
+        conjuredStrategy.getsOlderByOneDay(sourceItem);
+        // then
+        Item expectedItem = new Item(null, sellIn, quality);
+        decrementSellIn(expectedItem);
+        decreaseQuality(expectedItem, 2);
         assertEquals(expectedItem.quality, sourceItem.quality);
         assertEquals(expectedItem.sellIn, sourceItem.sellIn);
     }

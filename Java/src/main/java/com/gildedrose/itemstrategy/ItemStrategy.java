@@ -32,6 +32,13 @@ public interface ItemStrategy {
         };
     }
 
+    static ItemStrategy ConjuredStrategy() {
+        return item -> {
+            decrementSellIn(item);
+            decreaseQuality(item, 2);
+        };
+    }
+
     /*********************************************************
      * Custom strategies
      ********************************************************/
